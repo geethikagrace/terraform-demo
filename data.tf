@@ -1,6 +1,9 @@
 data "aws_vpc" "vpc_id" {
-  id = "vpc-0f5c2199ac552becb"
+  id = var.vpc_id
 }
 
+data "aws_ami" "ami_id" {
+  id = var.ami_id
+}
 
 
