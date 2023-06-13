@@ -12,7 +12,7 @@ resource "aws_instance" "demo-ec2" {
 resource "aws_security_group" "demo-sg" {
   name        = "demo-sg"
   description = "demo-sg"
-  vpc_id      =  var.vpc_id
+  vpc_id      = data.aws_vpc.vpc_id
 
   ingress {
     description      = "demo"
