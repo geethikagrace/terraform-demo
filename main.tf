@@ -36,5 +36,3 @@ resource "aws_security_group" "demo-sg" {
 }
 
 
-name = "demo"
-vpc_id = "vpc-0f5c2199ac552becb"
