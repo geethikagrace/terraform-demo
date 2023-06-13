@@ -1,5 +1,5 @@
 resource "aws_instance" "demo-ec2" {
-  ami           = data.aws_ami.ami_id.id
+  ami           = data.aws_ami.ami.id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
