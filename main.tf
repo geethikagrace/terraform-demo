@@ -1,5 +1,5 @@
 resource "aws_instance" "demo-ec2" {
-  ami           = "ami-03265a0778a880afb"
+  ami           = data.aws_ami.ami_id.id
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
@@ -32,6 +32,14 @@ resource "aws_security_group" "demo-sg" {
 
   tags = {
     Name = "demo"
+  }
+}
+
+
+resource "null_resource"  "demo1" {
+
+  provisioner "local-exec" {
+    command = "echo hello  world"
   }
 }
 
