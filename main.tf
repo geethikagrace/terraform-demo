@@ -1,7 +1,7 @@
 resource "aws_instance" "demo-ec2" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
-  security_groups = aws_security_group.demo-sg
+  security_groups = aws_security_group.demo-sg.id
 
   tags = {
     Name = "demo-ec2"
@@ -31,7 +31,7 @@ resource "aws_security_group" "demo-sg" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "demo"
   }
 }
 
