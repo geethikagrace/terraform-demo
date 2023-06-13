@@ -1,7 +1,7 @@
 resource "aws_instance" "demo-ec2" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
-  security_groups = aws_security_group.demo-sg.id
+  vpc_security_group_ids = [aws_security_group.demo-sg.id]
 
   tags = {
     Name = "demo-ec2"
@@ -10,8 +10,8 @@ resource "aws_instance" "demo-ec2" {
 
 
 resource "aws_security_group" "demo-sg" {
-  name        = "${var.name}-sg"
-  description = "${var.name}-sg"
+  name        = "demo-sg"
+  description = "demo-sg"
   vpc_id      =  var.vpc_id
 
   ingress {
