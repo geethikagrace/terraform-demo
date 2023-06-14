@@ -36,8 +36,7 @@ resource "aws_security_group" "demo-sg" {
   }
 }
 
-
-resource "null_resource"  "demo1" {
+resource "null_resource"  "sony" {
 
   provisioner "local-exec" {
     command = "echo hello  world"
